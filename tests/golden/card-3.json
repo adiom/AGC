@@ -1,0 +1,8 @@
+{
+  "id": "steel-anchor",
+  "name": "Steel Anchor",
+  "type": "artifact",
+  "cost": 3,
+  "text": "Your base takes 1 less damage.",
+  "tags": ["steel"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "rift-shift",
+  "name": "Rift Shift",
+  "type": "spell",
+  "cost": 2,
+  "text": "Teleport a unit to any open tile.",
+  "tags": ["rift"]
+}

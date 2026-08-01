@@ -1,0 +1,176 @@
+:root {
+  color-scheme: dark;
+  font-family: "Space Mono", monospace;
+  background-color: #0f1014;
+  color: #e6e6e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+button {
+  background: #1c1f29;
+  color: #e6e6e6;
+  border: 1px solid #3a3f52;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: transparent;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 320px 1fr;
+  gap: 16px;
+}
+
+.player-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.player-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.battlefield,
+.hand {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+}
+
+.card {
+  background: #151923;
+  border: 1px solid #2c3245;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.card-stats {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.card-text {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.card-keywords {
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.card-action {
+  margin-top: auto;
+}
+
+.log {
+  background: #12151d;
+  border: 1px solid #2a3042;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 70vh;
+}
+
+.log-entries {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.game-over {
+  font-weight: 600;
+  color: #f4b860;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #161a24;
+  border: 1px solid #2f3548;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(90vw, 420px);
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hint {
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .log {
+    order: 2;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@absurd/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @absurd/engine build && vite",
+    "build": "pnpm --filter @absurd/engine build && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@absurd/engine": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.7"
+  }
+}

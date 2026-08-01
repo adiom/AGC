@@ -1,0 +1,12 @@
+{
+  "id": "ember-drake",
+  "name": "Ember Drake",
+  "type": "unit",
+  "cost": 4,
+  "text": "On play: deal 1 damage to all enemies.",
+  "tags": ["ember", "flying"],
+  "stats": {
+    "attack": 3,
+    "health": 4
+  }
+}

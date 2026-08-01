@@ -1,0 +1,46 @@
+[
+  {
+    "id": "d7c4a1c3e53e9d876dbd9f7f3ddc1e7bf9357ec1d0f0bd5b2b5b52d77c9bfb7e",
+    "version": "1.0",
+    "name": "Starter Golem",
+    "type": "Creature",
+    "faction": "Iron Pact",
+    "rarity": "Common",
+    "cost": 2,
+    "stats": { "attack": 2, "health": 3 },
+    "keywords": ["Sturdy"],
+    "text": "A simple construct.",
+    "flavor": "Forged for the first step.",
+    "artPrompt": "A small stone golem with glowing runes.",
+    "tags": ["starter", "golem"],
+    "balance": { "powerScore": 40, "notes": "Baseline creature." },
+    "provenance": {
+      "createdAtISO": "2024-01-01T00:00:00.000Z",
+      "generator": "starter",
+      "promptHash": "starter",
+      "seed": "starter"
+    }
+  },
+  {
+    "id": "5a17ce1346c386cd6d0b9a0f8e8ce2c87732c5b8b8a4f52d4ddc4bb8c42c76d5",
+    "version": "1.0",
+    "name": "Spark Burst",
+    "type": "Spell",
+    "faction": "Ember Court",
+    "rarity": "Common",
+    "cost": 1,
+    "stats": null,
+    "keywords": ["Burst"],
+    "text": "Deal 3 damage to target creature",
+    "flavor": "A flash and a hiss.",
+    "artPrompt": "A burst of orange sparks in a dark arena.",
+    "tags": ["damage"],
+    "balance": { "powerScore": 50, "notes": "Simple removal." },
+    "provenance": {
+      "createdAtISO": "2024-01-01T00:00:00.000Z",
+      "generator": "starter",
+      "promptHash": "starter",
+      "seed": "starter"
+    }
+  }
+]

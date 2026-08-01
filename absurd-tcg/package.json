@@ -1,0 +1,26 @@
+{
+  "name": "absurd-tcg",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@9.12.3",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "generate": "pnpm --filter @absurd/cli run generate",
+    "cli": "pnpm --filter @absurd/cli run cli"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  }
+}

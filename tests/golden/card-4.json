@@ -1,0 +1,8 @@
+{
+  "id": "tidal-crossing",
+  "name": "Tidal Crossing",
+  "type": "location",
+  "cost": 5,
+  "text": "Units entering gain +1 health this turn.",
+  "tags": ["tide"]
+}

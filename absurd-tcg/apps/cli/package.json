@@ -1,0 +1,23 @@
+{
+  "name": "@absurd/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "absurd-tcg": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "cli": "node dist/index.js",
+    "generate": "node dist/index.js generate",
+    "validate": "node dist/index.js validate",
+    "run-sim": "node dist/index.js run-sim"
+  },
+  "dependencies": {
+    "@absurd/card-schema": "workspace:*",
+    "@absurd/engine": "workspace:*",
+    "@absurd/generator": "workspace:*"
+  }
+}

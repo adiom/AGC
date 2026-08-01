@@ -1,0 +1,12 @@
+{
+  "id": "forest-sentinel",
+  "name": "Forest Sentinel",
+  "type": "unit",
+  "cost": 6,
+  "text": "Guard. When damaged, gain +1 attack.",
+  "tags": ["forest"],
+  "stats": {
+    "attack": 4,
+    "health": 7
+  }
+}

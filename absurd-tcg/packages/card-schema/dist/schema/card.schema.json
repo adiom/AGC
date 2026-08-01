@@ -1,0 +1,172 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://absurd.example/schema/card-v1.schema.json",
+    "title": "Card v1",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "id",
+        "version",
+        "name",
+        "type",
+        "faction",
+        "rarity",
+        "cost",
+        "stats",
+        "keywords",
+        "text",
+        "flavor",
+        "artPrompt",
+        "tags",
+        "balance",
+        "provenance"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+        },
+        "version": {
+            "type": "string",
+            "const": "1.0"
+        },
+        "name": {
+            "type": "string",
+            "minLength": 1
+        },
+        "type": {
+            "type": "string",
+            "enum": ["Creature", "Spell", "Artifact", "Field"]
+        },
+        "faction": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+        },
+        "rarity": {
+            "type": "string",
+            "enum": ["Common", "Uncommon", "Rare", "Mythic"]
+        },
+        "cost": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10
+        },
+        "text": {
+            "type": "string",
+            "maxLength": 500
+        },
+        "flavor": {
+            "type": "string",
+            "maxLength": 240
+        },
+        "artPrompt": {
+            "type": "string",
+            "maxLength": 240
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true,
+            "maxItems": 12
+        },
+        "stats": {
+            "anyOf": [
+                { "type": "null" },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["attack", "health"],
+                    "properties": {
+                        "attack": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 20
+                        },
+                        "health": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 30
+                        }
+                    }
+                }
+            ]
+        },
+        "keywords": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 32
+            },
+            "uniqueItems": true,
+            "maxItems": 12
+        },
+        "balance": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["powerScore", "notes"],
+            "properties": {
+                "powerScore": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                "notes": {
+                    "type": "string",
+                    "maxLength": 240
+                }
+            }
+        },
+        "provenance": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["createdAtISO", "generator", "promptHash", "seed"],
+            "properties": {
+                "createdAtISO": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "generator": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                },
+                "promptHash": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                },
+                "seed": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": { "type": { "const": "Creature" } }
+            },
+            "then": {
+                "properties": {
+                    "stats": { "type": "object" }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": { "type": { "enum": ["Spell", "Artifact", "Field"] } }
+            },
+            "then": {
+                "properties": {
+                    "stats": { "type": "null" }
+                }
+            }
+        }
+    ]
+}
